@@ -1,0 +1,35 @@
+{
+  "name": "leader-board",
+  "version": "1.0.0",
+  "description": "In this activity you will set up a JavaScript project for the Leaderboard list app, using webpack and ES6 features, notably modules. You should develop a first working version of the app following a wireframe, but without styling - just focus on functionality. In following activities, you will consume the Leaderboard API using JavaScript async and await and add some styling.",
+  "private": true,
+  "scripts": {
+    "start": "webpack serve --open",
+    "build": "webpack",
+    "check-linters": "npx lhci autorun --upload.target=temporary-public-storage --collect.staticDistDir=. && npx hint . && npx stylelint **/*.{css,scss} && npx eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aimemalaika/Leader-board.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aimemalaika/Leader-board/issues"
+  },
+  "homepage": "https://github.com/aimemalaika/Leader-board#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.25.4",
+    "hint": "^6.1.9",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.21.0",
+    "webpack": "^5.66.0",
+    "webpack-cli": "^4.9.1"
+  }
+}

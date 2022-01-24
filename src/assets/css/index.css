@@ -31,6 +31,7 @@ h2 {
 
 .btn {
   height: 30px;
+  line-height: 25px;
   box-shadow: 2px 2px 0 0 black;
 }
 
@@ -57,6 +58,13 @@ h2 {
   justify-self: end;
 }
 
+.loader-button {
+  float: left;
+  height: 20px;
+  margin-right: 10px;
+  margin-top: 2px;
+}
+
 .scores-list {
   padding: 0;
   list-style-type: none;
@@ -76,4 +84,10 @@ h2 {
 
 .no-data-found {
   text-align: center;
+}
+
+.loader {
+  width: 10%;
+  height: 10%;
+  margin: 2% 45%;
 }

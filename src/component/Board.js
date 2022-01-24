@@ -1,3 +1,5 @@
+import buffering from '../assets/images/loading-buffering.gif';
+
 class Board {
   constructor(user, score) {
     this.user = user;
@@ -6,44 +8,53 @@ class Board {
 
   static list = document.querySelector('.scores-list');
 
-  static db = (scoreObj) => {
-    if (scoreObj) {
-      window.localStorage.setItem('scores', JSON.stringify(scoreObj));
-      return true;
-    }
-    const datas = ((window.localStorage.getItem('scores') !== null) ? JSON.parse(window.localStorage.getItem('scores')) : []);
-    return datas.sort((a, b) => parseFloat(b.score) - parseFloat(a.score));
-  }
+  static gameId = 'SX8xrcRek3NXTGVgvB61';
 
-  static add = (scoreData) => {
-    if (scoreData.user !== '') {
-      if (this.db().length === 0) {
-        document.querySelector('.no-data-found').remove();
+  static baseUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games';
+
+  static add = async (scoreData) => {
+    document.querySelector('.submit-form').prepend(this.returnCustomLoader('loader-button'));
+    if (scoreData.user !== '' && scoreData.score !== '') {
+      const requestOptions = {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+        body: JSON.stringify(scoreData),
+      };
+      const request = await fetch(`${this.baseUrl}/${this.gameId}/scores`, requestOptions);
+      if (request.status === 201) {
+        this.load();
       }
-      const store = Board.db();
-      store.push(scoreData);
-      this.db(store);
-      this.load();
     }
+    return document.querySelector('.loader-button').remove();
   }
 
-  static load = () => {
+  static load = async () => {
+    let scores = '';
     this.list.innerHTML = '';
-    if (this.db().length) {
-      this.db().forEach((result) => {
-        this.append(result);
-      });
-    } else {
-      this.list.innerHTML += `
-        <li class="no-data-found">No Result found</li>
-      `;
+    this.list.append(this.returnCustomLoader('loader'));
+    if (navigator.onLine) {
+      const request = await fetch(`${this.baseUrl}/${this.gameId}/scores`, { method: 'GET' });
+      const { result } = await request.json();
+      if (result.length) {
+        result.sort((a, b) => parseFloat(b.score) - parseFloat(a.score)).forEach((score) => {
+          scores += `<li><span>${score.user}</span> <span>${score.score}</span></li>`;
+        });
+        this.list.innerHTML = scores;
+      } else {
+        this.list.innerHTML += `
+          <li class="no-data-found">No Result found</li>
+        `;
+      }
     }
   }
 
-  static append = (result) => {
-    this.list.innerHTML += `
-      <li><span>${result.user}</span> <span>${result.score}</span></li>
-    `;
-  }
+  static returnCustomLoader = (className) => {
+    const loader = new Image();
+    loader.src = buffering;
+    loader.classList.add(className);
+    return loader;
+  };
 }
 export default Board;

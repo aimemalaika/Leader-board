@@ -1,17 +1,18 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 # LEADBOARD APP
-> In this activity you will set up a JavaScript project for the Leaderboard list app, using webpack and ES6 features, notably modules.
+> In this activity you will set up a JavaScript project for the Leaderboard list app, using webpack and ES6 features, notably modules.\
 
+![screenshot](./src/assets/images/leaderboard_wireframe.png)
 ## Built With
 - HTML & CSS & JavaScript
 - Html, Css & JavaScript linters
 ## Live Demo
-> 
+> ###### [LIVE DEMO LINK](https://aimemalaika.github.io/leader-board-sneak-code/)
 ##### Getting Started
 - clone the repository by running\
-    `git clone https://github.com/aimemalaika/Leader-board.git`
+    `git clone https://github.com/aimemalaika/leader-board-sneak-code.git`
 - navigate to the folder\
-    `cd Leader-board`
+    `cd leader-board-sneak-code`
 - Install packages\
     `npm install`
 - Run the app\

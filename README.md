@@ -7,10 +7,10 @@
 - HTML & CSS & JavaScript
 - Html, Css & JavaScript linters
 ## Live Demo
-> ###### [LIVE DEMO LINK](https://aimemalaika.github.io/leader-board-sneak-code/)
+> ###### [LIVE DEMO LINK](https://aimemalaika.github.io/Leader-board/)
 ##### Getting Started
 - clone the repository by running\
-    `git clone https://github.com/aimemalaika/leader-board-sneak-code.git`
+    `git clone https://github.com/aimemalaika/Leader-board.git`
 - navigate to the folder\
     `cd leader-board-sneak-code`
 - Install packages\

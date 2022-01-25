@@ -1,7 +1,11 @@
 import Board from '../../component/Board.js';
 import '../css/index.css';
+import logo from '../images/logo.png';
 
 (() => {
+  const image = new Image();
+  image.src = logo;
+  document.querySelector('.logo').prepend(image);
   Board.load();
 })();
 
@@ -25,4 +29,12 @@ document.querySelector('#submit-data').addEventListener('submit', (e) => {
 
 document.querySelector('.refresh').addEventListener('click', () => {
   Board.load();
+});
+
+document.querySelector('.open-modal').addEventListener('click', () => {
+  document.querySelector('.score-form').style.display = 'block';
+});
+
+document.querySelector('.close-modal').addEventListener('click', () => {
+  document.querySelector('.score-form').style.display = 'none';
 });

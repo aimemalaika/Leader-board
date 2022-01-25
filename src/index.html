@@ -10,22 +10,29 @@
 
 <body>
   <header>
-    <h1>Leaderboard</h1>
+    <a class="logo" href="/">
+      black ops 4
+    </a>
   </header>
   <section class="board-section">
     <div class="result">
       <div class="titles">
-        <h2>Call of Duty Vanguard Recent Score</h2>
-        <button type="button" class="btn refresh">Refresh</button>
+        <h2>Recent Score</h2>
+        <div>
+          <button type="button" class="btn refresh">Refresh</button>
+          <button type="button" class="btn open-modal">Add Score</button>
+        </div>
       </div>
+      <div class="chanpions"></div>
       <ul class="scores-list"></ul>
     </div>
-    <div class="score-form">
-      <h2>Add your Score</h2>
+    <div class="score-form btn">
+      <div class="close-panel"><button type="button" class="close-modal">x</button></div>
+      <h2 class="form-title">Add your Score</h2>
       <form action="#" id="submit-data">
         <input type="text" id="fullname" placeholder="Your name">
         <input type="number" id="score" placeholder="Your Score">
-        <button type="submit" class="btn submit-form"><span>Submit</span></button>
+        <button type="submit" class="btn submit-form open-modal"><span>Submit</span></button>
       </form>
     </div>
   </section>

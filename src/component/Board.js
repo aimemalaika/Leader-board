@@ -60,7 +60,7 @@ class Board {
             this.chanpions.innerHTML += `
               <div class="element champion-${rank}">
                 <div class="rank display-winners-${rank}">${rank}</div>
-                <div class="btn initials">${initials}</div>
+                <div class="btn initials">${initials.toUpperCase()}</div>
                 <div class="scores">${score.score}</div>
                 <div class="names">${score.user}</div>
               </div>

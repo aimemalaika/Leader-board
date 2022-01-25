@@ -281,6 +281,7 @@ h2 {
   font-size: 2.5em;
   color: #cd6b0e;
   font-family: 'title-font', Arial, Helvetica, sans-serif;
+  overflow: hidden;
 }
 
 .chanpions .element .names {

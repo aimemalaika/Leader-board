@@ -2,7 +2,7 @@
 # LEADBOARD APP
 > In this activity you will set up a JavaScript project for the Leaderboard list app, using webpack and ES6 features, notably modules.\
 
-![screenshot](./src/assets/images/leaderboard_wireframe.png)
+![screenshot](https://user-images.githubusercontent.com/28307960/169218567-6e334d66-db90-4a38-8c4d-b3dea73ec648.png)
 ## Built With
 - HTML & CSS & JavaScript
 - Html, Css & JavaScript linters
